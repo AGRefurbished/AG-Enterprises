@@ -92,6 +92,7 @@
             border-radius: 10px;
             margin: 20px auto;
             max-width: 800px;
+            position: relative;
         }
 
         .review-container {
@@ -115,6 +116,7 @@
             display: block;
         }
 
+        /* ✅ Fixed Review Arrows */
         .prev-review, .next-review {
             background: #146b3a;
             color: white;
@@ -125,12 +127,12 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 100;
+            z-index: 10;
             border-radius: 5px;
         }
 
-        .prev-review { left: 10px; }
-        .next-review { right: 10px; }
+        .prev-review { left: -50px; } /* ✅ Adjusted for better alignment */
+        .next-review { right: -50px; } /* ✅ Adjusted for better alignment */
 
         .prev-review:hover, .next-review:hover {
             background: #ffd700;
@@ -159,13 +161,11 @@
     </nav>
 
     <div class="container">
-        <!-- ✅ Furniture Section (Only for Sale) -->
+        <!-- ✅ Furniture Section -->
         <section id="furniture" class="gallery">
             <h2>Furniture for Sale</h2>
             <div class="product">
                 <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4844.CR2.jpg?raw=true" alt="Refurbished Oak Table">
-                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4849.CR2.jpg?raw=true" alt="Refurbished Oak Table">
-             <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4845.CR2.jpg?raw=true" alt="Refurbished Oak Table">
                 <h3>Refurbished Oak Table</h3>
                 <p>Beautifully restored oak and iron frame table with a polished finish.</p>
                 <p><strong>Price: $150</strong></p>
@@ -173,30 +173,30 @@
             </div>
         </section>
 
-        <!-- ✅ Tools Section (Only for Sale) -->
+        <!-- ✅ Tools Section -->
         <section id="tools" class="gallery">
             <h2>Tools for Sale</h2>
             <div class="product">
                 <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4862.CR2.jpg?raw=true" alt="Butcher's Cleaver">
-                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4867.CR2.jpg?raw=true" alt="Butcher's Cleaver">
                 <h3>W.M. Beatty & Sons Butcher's Cleaver</h3>
-                <p>Approx. 150-year-old cleaver, sharpened and restored. Visible bull's head stamp.</p>
+                <p>Approx. 150-year-old cleaver, sharpened and restored. Visible bull's head stamp denotes the age.</p>
                 <p><strong>Price: $200</strong></p>
                 <a href="#contact" class="cta-button">Inquire Now</a>
+            </div>
+
             <div class="product">
-    <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4856.CR2.jpg?raw=true" alt="Antique Metal Meat Hook">
-    <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4855.CR2.jpg?raw=true" alt="Antique Metal Meat Hook">
-    <h3>Antique Metal Meat Hook</h3>
-    <p>Vintage meat hook in excellent condition. A solid addition to any butcher or collector's tools.</p>
-    <p><strong>Price: $40</strong></p>
-    <p><strong>Shipping:</strong> Ships within 3-5 business days. Contact us for local pickup or custom shipping options.</p>
-    <a href="#contact" class="cta-button">Inquire Now</a>
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4856.CR2.jpg?raw=true" alt="Antique Metal Meat Hook">
+                <h3>Antique Metal Meat Hook</h3>
+                <p>Vintage meat hook in excellent condition. A solid addition to any butcher or collector's tools.</p>
+                <p><strong>Price: $40</strong></p>
+                <a href="#contact" class="cta-button">Inquire Now</a>
             </div>
         </section>
 
-        <!-- ✅ Reviews Section -->
+        <!-- ✅ Reviews Section (Corrected Arrows) -->
         <section id="reviews" class="gallery">
             <h2>Customer Reviews</h2>
+            <button class="prev-review">❮</button>
             <div class="review-container">
                 <div class="review-slide active">
                     <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
@@ -207,7 +207,6 @@
                     <p>"The tools I purchased were in great condition."</p>
                 </div>
             </div>
-            <button class="prev-review">❮</button>
             <button class="next-review">❯</button>
         </section>
 
@@ -216,9 +215,8 @@
             <h2>Contact Us</h2>
             <p>Follow us on Instagram for more refurbishing projects: <a href="https://www.instagram.com/ag_refurb" target="_blank">@ag_refurb</a></p>
             <form>
-                <input type="text" placeholder="Muhammad" required><br><br>
-                <input type="text" placeholder="Marvin" required><br><br>
-                <input type="email" placeholder="aligarcia.enterprises@gmail.com" required><br><br>
+                <input type="text" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Your Email" required><br><br>
                 <textarea placeholder="Let us know what you're interested in! Furniture, tools, or custom refurbishing?" rows="4"></textarea><br>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
