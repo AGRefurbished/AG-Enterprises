@@ -73,17 +73,43 @@
             padding: 20px;
             margin-top: 20px;
         }
+
+        /* ✅ FIXED: Added proper CSS for Reviews Section */
+        #reviews {
+            background: #222;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .review {
+            background: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .review p {
+            margin: 5px 0;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>AG Refurbished</h1>  <!-- ✅ FIXED: Added this above the slogan -->
+        <h1>AG Refurbished</h1>
         <p>Refurbished. Repurposed. Reimagined.</p>
-        <h2>A & G Enterprises LLC</h2>  <!-- ✅ FIXED: Kept this below the slogan -->
+        <h2>A & G Enterprises LLC</h2>
     </header>
     <nav>
-        <a href="#furniture-for-sale">Furniture</a>
+        <a href="#furniture">Furniture</a>
         <a href="#tools">Tools</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
@@ -100,7 +126,7 @@
             </div>
         </section>
 
-        <section id="tools-for-sale" class="gallery">
+        <section id="tools" class="gallery">
             <h2>Tools</h2>
             <div class="product">
                 <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4862.CR2.jpg?raw=true" alt="Butcher's Cleaver">
@@ -115,69 +141,46 @@
             </div>
         </section>
 
+        <!-- ✅ FIXED: Reviews Section Now Works Properly -->
+        <section id="reviews" class="gallery">
+            <h2>Customer Reviews</h2>
+
+            <div class="review">
+                <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
+                <p>"The refurbished oak table I bought was incredible! Great craftsmanship and attention to detail."</p>
+            </div>
+
+            <div class="review">
+                <p><strong>Sarah M.</strong> ⭐⭐⭐⭐⭐</p>
+                <p>"The tools I purchased were in excellent condition. Honest seller with great prices!"</p>
+            </div>
+
+            <div class="review">
+                <p><strong>Michael B.</strong> ⭐⭐⭐⭐⭐</p>
+                <p>"Amazing customer service! They even customized a piece to match my home decor."</p>
+            </div>
+
+            <h3>Leave a Review</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required><br><br>
+                <textarea placeholder="Write your review here..." rows="4"></textarea><br>
+                <button type="submit" class="cta-button">Submit Review</button>
+            </form>
+        </section>
+
         <section id="contact" class="gallery">
             <h2>Contact Us</h2>
             <form>
-                <input type="text" placeholder="Muhammad" required><br><br>
-                <input type="text" placeholder="Marvin" required><br><br>
-                <input type="email" placeholder="aligarcia.enterprises@gmail.com" required><br><br>
-               <textarea placeholder="Write your message here. Let us know how we can assist you!" rows="4"></textarea><br>
+                <input type="text" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Your Email" required><br><br>
+                <textarea placeholder="Write your message here. Let us know how we can assist you!" rows="4"></textarea><br>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
         </section>
     </div>
-</style>
-    #reviews {
-    background: #222;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-.review {
-    background: #333;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.review p {
-    margin: 5px 0;
-}
-
-h3 {
-    margin-top: 20px;
-}
-<section id="reviews" class="gallery">
-    <h2>Customer Reviews</h2>
-
-    <div class="review">
-        <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
-        <p>"The refurbished oak table I bought was incredible! Great craftsmanship and attention to detail."</p>
-    </div>
-
-    <div class="review">
-        <p><strong>Sarah M.</strong> ⭐⭐⭐⭐⭐</p>
-        <p>"The tools I purchased were in excellent condition. Honest seller with great prices!"</p>
-    </div>
-
-    <div class="review">
-        <p><strong>Michael B.</strong> ⭐⭐⭐⭐⭐</p>
-        <p>"Amazing customer service! They even customized a piece to match my home decor."</p>
-    </div>
-
-    <h3>Leave a Review</h3>
-    <form>
-        <input type="text" placeholder="Your Name" required><br><br>
-        <textarea placeholder="Write your review here..." rows="4"></textarea><br>
-        <button type="submit" class="cta-button">Submit Review</button>
-    </form>
-</section>
 
     <footer>
-        <p>&copy; 2025 A&G Enterprises. Pssionately Crafted.</p>
+        <p>&copy; 2025 A&G Enterprises. Passionately Crafted.</p>
     </footer>
 </body>
 </html>
