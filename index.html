@@ -7,6 +7,50 @@
     <link rel="icon" type="image/png" href="hammer-saw-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:wght@900&display=swap" rel="stylesheet">
     <style>
+        .review-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.review-slide {
+    display: none;
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.review-slide.active {
+    display: block;
+}
+
+.prev-review, .next-review {
+    background: #146b3a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-review {
+    left: 10px;
+}
+
+.next-review {
+    right: 10px;
+}
+
+.prev-review:hover, .next-review:hover {
+    background: #ffd700;
+    color: #1a1a1a;
+}
+
         body {
             font-family: 'Big Shoulders Inline', sans-serif;
             background-color: #1a1a1a;
@@ -152,33 +196,63 @@
     <a href="#contact" class="cta-button">Inquire Now</a>
 </div>
         </section>
+        <section id="about-us" class="gallery">
+    <h2>About A&G Enterprises</h2>
+    <p>At A&G Enterprises, we specialize in giving old furniture and tools a second life. 
+       Our passion is restoring high-quality items, preserving their history, and making them functional again.</p>
+    <p>We are based in Georgia and offer local pickup along with nationwide shipping.</p>
+</section>
 
         <!-- ✅ FIXED: Reviews Section Now Works Properly -->
-        <section id="reviews" class="gallery">
-            <h2>Customer Reviews</h2>
+       <section id="reviews" class="gallery">
+    <h2>Customer Reviews</h2>
 
-            <div class="review">
-                <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
-                <p>"The refurbished table I bought was incredible! Great craftsmanship and attention to detail."</p>
-            </div>
+    <div class="review-container">
+        <div class="review-slide active">
+            <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
+            <p>"The refurbished oak table I bought was incredible! Great craftsmanship and attention to detail."</p>
+        </div>
 
-            <div class="review">
-                <p><strong>Sarah M.</strong> ⭐⭐⭐⭐⭐</p>
-                <p>"The tools I purchased were in excellent condition. Honest seller with great prices!"</p>
-            </div>
+        <div class="review-slide">
+            <p><strong>Sarah M.</strong> ⭐⭐⭐⭐⭐</p>
+            <p>"The tools I purchased were in excellent condition. Honest seller with great prices!"</p>
+        </div>
 
-            <div class="review">
-                <p><strong>Michael B.</strong> ⭐⭐⭐⭐⭐</p>
-                <p>"Amazing customer service! They even customized a piece to match my home decor."</p>
-            </div>
+        <div class="review-slide">
+            <p><strong>Michael B.</strong> ⭐⭐⭐⭐⭐</p>
+            <p>"Amazing customer service! They even customized a piece to match my home decor."</p>
+        </div>
 
-            <h3>Leave a Review</h3>
-            <form>
-                <input type="text" placeholder="Your Name" required><br><br>
-                <textarea placeholder="Write your review here..." rows="4"></textarea><br>
-                <button type="submit" class="cta-button">Submit Review</button>
-            </form>
-        </section>
+        <div class="review-slide">
+            <p><strong>Lisa R.</strong> ⭐⭐⭐⭐⭐</p>
+            <p>"Super fast shipping! The antique meat hook was exactly as described and in great condition."</p>
+        </div>
+    </div>
+
+    <button class="prev-review">❮</button>
+    <button class="next-review">❯</button>
+
+    <h3>Leave a Review</h3>
+    <form>
+        <input type="text" placeholder="Your Name" required><br><br>
+        <textarea placeholder="Write your review here..." rows="4"></textarea><br>
+        <button type="submit" class="cta-button">Submit Review</button>
+    </form>
+</section>
+
+        <section id="faqs" class="gallery">
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Do you offer custom refurbishing services?</h3>
+    <p>Yes! If you have a piece you'd like restored, reach out via our contact form.</p>
+
+    <h3>What payment methods do you accept?</h3>
+    <p>We accept PayPal, Zelle, CashApp, and direct bank transfers.</p>
+
+    <h3>Do you offer refunds?</h3>
+    <p>Due to the nature of our refurbished items, all sales are final. 
+       However, if an item arrives damaged, please contact us immediately.</p>
+</section>
 
         <section id="contact" class="gallery">
             <h2>Contact Us</h2>
@@ -195,5 +269,33 @@
     <footer>
         <p>&copy; 2025 A&G Enterprises. Passionately Crafted.</p>
     </footer>
+    <script>
+    let currentReview = 0;
+    const reviews = document.querySelectorAll(".review-slide");
+    const prevButton = document.querySelector(".prev-review");
+    const nextButton = document.querySelector(".next-review");
+
+    function showReview(index) {
+        reviews.forEach((review, i) => {
+            review.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextReview() {
+        currentReview = (currentReview + 1) % reviews.length;
+        showReview(currentReview);
+    }
+
+    function prevReview() {
+        currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+        showReview(currentReview);
+    }
+
+    nextButton.addEventListener("click", nextReview);
+    prevButton.addEventListener("click", prevReview);
+
+    // Auto-slide every 5 seconds
+    setInterval(nextReview, 5000);
+</script>
 </body>
 </html>
