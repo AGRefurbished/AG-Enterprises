@@ -126,19 +126,31 @@
             display: block;
         }
 
-        /* ✅ Fixed Review Arrows */
+        /* ✅ Improved Review Arrows */
         .prev-review, .next-review {
             background: #146b3a;
             color: white;
             border: none;
             padding: 10px 15px;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .prev-review {
+            left: -30px;
+        }
+
+        .next-review {
+            right: -30px;
         }
 
         .prev-review:hover, .next-review:hover {
@@ -155,11 +167,6 @@
 
 <body>
     <header>
-        <h1>AG Refurbished</h1>
-        <p>Refurbished. Repurposed. Reimagined.</p>
-        <h2>A & G Enterprises LLC</h2>
-    </header>
-
         <h1>AG Refurbished</h1>
         <p>Refurbished. Repurposed. Reimagined.</p>
         <h2>A & G Enterprises LLC</h2>
