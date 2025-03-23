@@ -77,6 +77,72 @@
             background: #ffd700;
             color: #1a1a1a;
         }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* ✅ Reviews Section */
+        #reviews {
+            background: #222;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .review-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .review-slide {
+            display: none;
+            background: #333;
+            padding: 15px;
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .review-slide.active {
+            display: block;
+        }
+
+        /* ✅ Fixed Review Arrows */
+        .prev-review, .next-review {
+            background: #146b3a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            border-radius: 5px;
+        }
+
+        .prev-review { left: -50px; } /* ✅ Adjusted for better alignment */
+        .next-review { right: -50px; } /* ✅ Adjusted for better alignment */
+
+        .prev-review:hover, .next-review:hover {
+            background: #ffd700;
+            color: #1a1a1a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 
@@ -94,54 +160,131 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Top Image Section -->
-    <section id="top-image" class="w-full mb-8">
-      <img src="/path/to/20250321_221924.jpg" alt="AG Refurbished Banner" class="w-full rounded-2xl shadow-md">
+    <div class="container">
+        <section id="our-story" class="gallery">
+        <h2>Our Story</h2>
+        <p>Welcome to A&G Enterprises, where every piece has a story and a second chance.</p>
+        <p>It all started in our home garage, where we have been refurbishing furniture and tools for years—just for our household and close friends. 
+           Over time, we realized how much we love restoring forgotten pieces, bringing them back to life with care and craftsmanship.</p>
+        <p>After selling our first refurbished item, we saw the excitement and appreciation from the customer who valued 
+           high-quality, repurposed work. That’s when we decided to share our ability with others who have the same passion 
+           for unique, well-crafted pieces.</p>
+        <p>Every item we restore is given a fresh start, with attention to detail and a commitment to quality. 
+           Whether it is a vintage tool with a rich history or a furniture piece that just needs new life, our goal 
+           is to ensure it finds the right home.</p>
+        <p>Thank you for supporting small craftsmanship. We hope you find something here that speaks to you.</p>
     </section>
-
-    <!-- Furniture Section with Updated Images -->
-    <section id="furniture" class="gallery">
-        <h2>Furniture for Sale</h2>
-        <div class="product">
-            <img src="/path/to/IMG_5200.CR2" alt="Refurbished Oak Iron Table - View 1">
-            <img src="/path/to/IMG_5201.CR2" alt="Refurbished Oak Iron Table - View 2">
-            <h3>Refurbished Oak Iron Table</h3>
-            <p>Beautifully restored oak and iron frame table with a polished finish.</p>
-            <p><strong>Price: $150.00</strong></p>
-            <a href="#contact" class="cta-button">Inquire Now</a>
-        </div>
-    </section>
-
-    <!-- Planter Addition Section -->
-    <section id="new-planter" class="p-8 bg-gray-100 rounded-2xl shadow-lg mt-8">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-center">New Pallet Planter</h2>
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 grid grid-cols-2 gap-4">
-            <img src="/path/to/IMG_5181.CR2" alt="Pallet Planter - View 1" class="rounded-2xl shadow-md mb-4">
-            <img src="/path/to/IMG_5179.CR2" alt="Pallet Planter - View 2" class="rounded-2xl shadow-md mb-4">
-            <img src="/path/to/IMG_5167.CR2" alt="Pallet Planter - View 3" class="rounded-2xl shadow-md mb-4">
-            <img src="/path/to/IMG_5158.CR2" alt="Pallet Planter - View 4" class="rounded-2xl shadow-md mb-4">
-          </div>
-          <div class="md:w-1/2 md:pl-8">
-            <p class="text-lg mb-4">Introducing our latest creation: a handcrafted pallet planter perfect for your garden or patio! Built with durability and style in mind, this planter features:</p>
-            <ul class="list-disc list-inside text-lg mb-4">
-              <li>Depth: 11.5 inches</li>
-              <li>Width: 23.5 inches</li>
-              <li>Length: 48.5 inches</li>
-              <li>Slightly raised design with 4-inch ground clearance</li>
-              <li>Can be raised higher upon request at no additional charge</li>
-            </ul>
-            <p class="text-lg mb-4">Enhance your outdoor space with this rustic yet modern planter. Perfect for flowers, herbs, vegetables, and more!</p>
-            <button class="bg-green-500 text-white px-4 py-2 rounded-2xl hover:bg-green-600 transition">Order Now</button>
-          </div>
-        </div>
+        <!-- ✅ Furniture Section -->
+        <section id="furniture" class="gallery">
+            <h2>Furniture for Sale</h2>
+            <div class="product">
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4844.CR2.jpg?raw=true" alt="Refurbished Oak Table">
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4849.CR2.jpg?raw=true" alt="Refurbished Oak Table">
+                 <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4845.CR2.jpg?raw=true" alt="Refurbished Oak Table">
+                <h3>Refurbished Oak Table</h3>
+                <p>Beautifully restored oak and iron frame table with a polished finish.</p>
+                <p><strong>Price: $150.00</strong></p>
+                <a href="#contact" class="cta-button">Inquire Now</a>
+            </div>
+        </section>
+     <!-- Planter Addition Section -->
+<section id="new-planter" class="p-8 bg-gray-100 rounded-2xl shadow-lg mt-8">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center">New Pallet Planter</h2>
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="/path/to/IMG_5181.CR2" alt="Pallet Planter - View 1" class="rounded-2xl shadow-md mb-4 md:mb-0">
+        <img src="/path/to/IMG_5179.CR2" alt="Pallet Planter - View 2" class="rounded-2xl shadow-md mb-4 md:mb-0">
+        <img src="/path/to/IMG_5167.CR2" alt="Pallet Planter - View 3" class="rounded-2xl shadow-md mb-4 md:mb-0">
+        <img src="/path/to/IMG_5158.CR2" alt="Pallet Planter - View 4" class="rounded-2xl shadow-md mb-4 md:mb-0">
       </div>
-    </section>
+      <div class="md:w-1/2 md:pl-8">
+        <p class="text-lg mb-4">Introducing our latest creation: a handcrafted pallet planter perfect for your garden or patio! Built with durability and style in mind, this planter features:</p>
+        <ul class="list-disc list-inside text-lg mb-4">
+          <li>Depth: 11.5 inches</li>
+          <li>Width: 23.5 inches</li>
+          <li>Length: 48.5 inches</li>
+          <li>Slightly raised design with 4-inch ground clearance</li>
+          <li>Can be raised higher upon request at no additional charge</li>
+        </ul>
+        <p class="text-lg mb-4">Enhance your outdoor space with this rustic yet modern planter. Perfect for flowers, herbs, vegetables, and more!</p>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-2xl hover:bg-green-600 transition">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+        
+        <!-- ✅ Tools Section -->
+        <section id="tools" class="gallery">
+            <h2>Tools for Sale</h2>
+            <div class="product">
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4862.CR2.jpg?raw=true" alt="Butcher's Cleaver">
+                 <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4867.CR2.jpg?raw=true" alt="Butcher's Cleaver">
+                <h3>W.M. Beatty & Sons Butcher's Cleaver</h3>
+                <p>Approx. 150-year-old cleaver, sharpened and restored. Visible bull's head stamp denotes the age.</p>
+                <p><strong>Price: $150.00</strong></p>
+                <a href="#contact" class="cta-button">Inquire Now</a>
+            </div>
+
+            <div class="product">
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4856.CR2.jpg?raw=true" alt="Antique Metal Meat Hook">
+                <img src="https://github.com/AGRefurbished/AG-Enterprises/blob/main/IMG_4855.CR2.jpg?raw=true" alt="Antique Metal Meat Hook">
+                <h3>Antique Metal Meat Hook</h3>
+                <p>Vintage meat hook in excellent condition. A solid addition to any butcher or collector's tools.</p>
+                <p><strong>Price: $40.00</strong></p>
+                <a href="#contact" class="cta-button">Inquire Now</a>
+            </div>
+        </section>
+
+        <!-- ✅ Reviews Section (Corrected Arrows) -->
+        <section id="reviews" class="gallery">
+            <h2>Customer Reviews</h2>
+            <button class="prev-review">❮</button>
+            <div class="review-container">
+                <div class="review-slide active">
+                    <p><strong>John D.</strong> ⭐⭐⭐⭐⭐</p>
+                    <p>"Amazing craftsmanship! The oak table is stunning."</p>
+                </div>
+                <div class="review-slide">
+                    <p><strong>Sarah M.</strong> ⭐⭐⭐⭐⭐</p>
+                    <p>"The tools I purchased were in great condition."</p>
+                </div>
+            </div>
+            <button class="next-review">❯</button>
+        </section>
+
+        <!-- ✅ Contact Section -->
+        <section id="contact" class="gallery">
+            <h2>Contact Us</h2>
+            <p>Follow us on Instagram for more refurbishing projects: <a href="https://www.instagram.com/ag_refurb" target="_blank">@ag_refurb</a></p>
+            <form>
+                <input type="text" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Your Email" required><br><br>
+                <textarea placeholder="Let us know what you're interested in! Furniture, tools, or custom refurbishing?" rows="4"></textarea><br>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 A&G Enterprises. Passionately Crafted.</p>
     </footer>
+
+    <script>
+        let currentReview = 0;
+        const reviews = document.querySelectorAll(".review-slide");
+
+        function showReview(index) {
+            reviews.forEach((review, i) => review.classList.toggle("active", i === index));
+        }
+
+        function nextReview() { currentReview = (currentReview + 1) % reviews.length; showReview(currentReview); }
+        function prevReview() { currentReview = (currentReview - 1 + reviews.length) % reviews.length; showReview(currentReview); }
+
+        document.querySelector(".prev-review").addEventListener("click", prevReview);
+        document.querySelector(".next-review").addEventListener("click", nextReview);
+        setInterval(nextReview, 5000);
+    </script>
 
 </body>
 </html>
