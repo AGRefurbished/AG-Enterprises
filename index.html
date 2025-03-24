@@ -288,33 +288,36 @@
             <h2>Contact Us</h2>
             <p>Follow us on Instagram for more refurbishing projects: <a href="https://www.instagram.com/ag_refurb" target="_blank">@ag_refurb</a></p>
             <form>
-                <input type="text" placeholder="Your Name" required><br><br>
-                <input type="email" placeholder="Your Email" required><br><br>
+                <input type="text" placeholder="Muhammad" required><br><br>
+                <input type="text" placeholder="Alexis" required><br><br>
+                <input type="email" placeholder="aligarcia.enterprises@gmail.com" required><br><br>
                 <textarea placeholder="Let us know what you're interested in! Furniture, tools, or custom refurbishing?" rows="4"></textarea><br>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
         </section>
     </div>
+<!-- ✅ Privacy Policy Modal -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-modal-content">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. We collect personal information only when necessary to provide our services and will not share your information without consent.</p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 A&G Enterprises. Passionately Crafted.</p>
+        <p>&copy; 2025 A&G Enterprises. Passionately Crafted. | <a href="#" onclick="openModal()" style="color: #ffd700;">Privacy Policy</a></p>
     </footer>
 
     <script>
-        let currentReview = 0;
-        const reviews = document.querySelectorAll(".review-slide");
-
-        function showReview(index) {
-            reviews.forEach((review, i) => review.classList.toggle("active", i === index));
+        function openModal() {
+            document.getElementById('privacyModal').style.display = 'block';
         }
-
-        function nextReview() { currentReview = (currentReview + 1) % reviews.length; showReview(currentReview); }
-        function prevReview() { currentReview = (currentReview - 1 + reviews.length) % reviews.length; showReview(currentReview); }
-
-        document.querySelector(".prev-review").addEventListener("click", prevReview);
-        document.querySelector(".next-review").addEventListener("click", nextReview);
-        setInterval(nextReview, 5000);
+        function closeModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
     </script>
 
 </body>
+
 </html>
